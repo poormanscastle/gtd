@@ -1,0 +1,6 @@
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2015-11-20 23:54:23
+hint
+project --topLevelPackage at.co.federmann.gtd --java 8 --packaging WAR 
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT --userName gtd --password gtd --databaseName gtd 
+entity jpa --class at.co.federmann.gtd.domain.GtdAction --serializable 1 --testAutomatically 1 --activeRecord 1 
+field string --fieldName name --notNull 1 --comment "a short textual highlevel label giving a quick idea what this action is about" 
