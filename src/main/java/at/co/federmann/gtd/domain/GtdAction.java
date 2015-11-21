@@ -15,9 +15,7 @@
  *
  */
 package at.co.federmann.gtd.domain;
-
 import javax.validation.constraints.NotNull;
-
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.serializable.RooSerializable;
@@ -37,8 +35,14 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class GtdAction {
 
     /**
-     * a short textual highlevel label giving a quick idea what this action is about
+     * a short textual highlevel label giving a quick idea what this action is about in plain text.
      */
     @NotNull
     private String name;
+
+    /**
+     * freetext to explain in detail what this activity is about. is considered to be markdown formatted.
+     */
+    @NotNull
+    private String description;
 }

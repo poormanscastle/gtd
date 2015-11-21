@@ -30,10 +30,10 @@ public class PriorityTest {
 
     @Test
     public void testGetI18nKey() throws Exception {
-        assertEquals("ignore", Priority.IGNORE_FOR_NOW.getI18nKey());
-        assertEquals("low", Priority.LOW.getI18nKey());
-        assertEquals("medium", Priority.MEDIUM.getI18nKey());
-        assertEquals("high", Priority.HIGH.getI18nKey());
-        assertEquals("urgent", Priority.URGENT.getI18nKey());
+        assertEquals("priority.ignore", Priority.IGNORE_FOR_NOW.getI18nKey());
+        assertEquals("priority.low", Priority.LOW.getI18nKey());
+        assertEquals("priority.medium", Priority.MEDIUM.getI18nKey());
+        assertEquals("priority.high", Priority.HIGH.getI18nKey());
+        assertEquals("priority.urgent", Priority.URGENT.getI18nKey());
     }
 }

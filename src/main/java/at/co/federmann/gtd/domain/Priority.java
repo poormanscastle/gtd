@@ -26,7 +26,16 @@ import org.apache.commons.lang3.StringUtils;
  */
 public enum Priority {
 
-    IGNORE_FOR_NOW(0, "ignore"), LOW(1, "low"), MEDIUM(2, "medium"), HIGH(3, "high"), URGENT(4, "urgent");
+    // current priority is so low that this action does not need to be taken even if there is no other action waiting
+    IGNORE_FOR_NOW(0, "priority.ignore"),
+    // execute actions with priorities urgent, high or medium before starting taking this action
+    LOW(1, "priority.low"),
+    // execute actions with priorities urgent or high before taking this action
+    MEDIUM(2, "priority.medium"),
+    // execute actions with priority urgent before taking this action
+    HIGH(3, "priority.high"),
+    // do these actions right away, possibly sorted by due date
+    URGENT(4, "priority.urgent");
 
     /**
      * id of the given priority.
@@ -43,6 +52,7 @@ public enum Priority {
         this.i18nKey = i18nKey;
     }
 
+    // this method allows ORM to map int fields to enum items
     public static Priority resolvePriority(Integer id) {
         if (id == null) {
             return null;

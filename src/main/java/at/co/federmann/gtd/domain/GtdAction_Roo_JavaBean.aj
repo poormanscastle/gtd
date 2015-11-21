@@ -15,4 +15,12 @@ privileged aspect GtdAction_Roo_JavaBean {
         this.name = name;
     }
     
+    public String GtdAction.getDescription() {
+        return this.description;
+    }
+    
+    public void GtdAction.setDescription(String description) {
+        this.description = description;
+    }
+    
 }
