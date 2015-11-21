@@ -14,7 +14,7 @@ privileged aspect GtdAction_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager GtdAction.entityManager;
     
-    public static final List<String> GtdAction.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "description");
+    public static final List<String> GtdAction.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "priority", "status", "description");
     
     public static final EntityManager GtdAction.entityManager() {
         EntityManager em = new GtdAction().entityManager;

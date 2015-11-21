@@ -15,6 +15,14 @@ privileged aspect GtdAction_Roo_JavaBean {
         this.name = name;
     }
     
+    public void GtdAction.setPriority(Integer priority) {
+        this.priority = priority;
+    }
+    
+    public void GtdAction.setStatus(Integer status) {
+        this.status = status;
+    }
+    
     public String GtdAction.getDescription() {
         return this.description;
     }

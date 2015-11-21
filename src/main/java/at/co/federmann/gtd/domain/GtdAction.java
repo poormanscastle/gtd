@@ -15,7 +15,11 @@
  *
  */
 package at.co.federmann.gtd.domain;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.serializable.RooSerializable;
@@ -39,6 +43,41 @@ public class GtdAction {
      */
     @NotNull
     private String name;
+
+    /**
+     * lets the user define priorities for the given action.
+     */
+    @NotNull
+    @Min(0L)
+    @Max(4L)
+    private Integer priority;
+
+    // allow enum to be mapped to the priorityId stored in persistence
+    public Priority getPriority() {
+        return Priority.resolvePriority(priority);
+    }
+
+    // allow enum to be mapped to the priorityId stored in persistence
+    public void setPriority(Priority priority) {
+        this.priority = priority.getId();
+    }
+
+    /**
+     * lets the user define a color code for the given activity's status
+     */
+    @NotNull
+    @Min(0L)
+    @Max(2L)
+    private Integer status;
+
+    // allow enum to be mapped to the statusId stored in persistence
+    public Status getStatus() {
+        return Status.resolveStatus(status);
+    }
+
+    public void setStatus(Status status) {
+        this.status = status.getId();
+    }
 
     /**
      * freetext to explain in detail what this activity is about. is considered to be markdown formatted.
