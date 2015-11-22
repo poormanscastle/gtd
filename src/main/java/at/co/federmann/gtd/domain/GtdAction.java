@@ -31,6 +31,8 @@ import org.springframework.roo.addon.tostring.RooToString;
  * you have to respond to, the errands you've got to run, and the agendas you want to communicate to your boss and your spouse.
  * You've probably have three hundred to five hundred hours' worth of these things to do iy you stopped the world right
  * now and got no more input from yourself or anyone else.
+ *
+ * Each action should support one of your goals (in life).
  */
 @RooJavaBean
 @RooToString
