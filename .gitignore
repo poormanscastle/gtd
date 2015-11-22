@@ -3,3 +3,5 @@ gtd.iml
 target
 gtd.properties
 gtd.script
+gtd.lck
+gtd.log
