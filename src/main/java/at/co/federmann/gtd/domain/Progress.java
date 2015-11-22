@@ -1,5 +1,7 @@
 package at.co.federmann.gtd.domain;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * defines the status of progress for the given activity, task or project.
  * <p>
@@ -7,8 +9,24 @@ package at.co.federmann.gtd.domain;
  */
 public enum Progress {
 
-    // OPEN, IN_PROGRESS, POSTPONED, WAITING, CLARIFY, REJECTED, CLOSED, DONE, REOPENED
-    OPEN(0, "progress.open");
+    // activity has been created and has not been processed since then
+    OPEN(0, "progress.open"),
+    // activity has been tackled
+    IN_PROGRESS(1, "progress.in_progress"),
+    // after having worked on the activity it was postponed to be completed at a later time
+    POSTPONED(2, "progress.postponed"),
+    // the execution of this task is delayed until some dependency has been taken care of
+    WAITING(3, "progress.waiting"),
+    // to handle this activity the activiy name and / or description need to be clarified
+    CLARIFY(4, "progress.clarify"),
+    // this activity will not be handled with for some reason
+    REJECTED(5, "progress.rejected"),
+    // this activity has become obsolete before it was delt with
+    CLOSED(6, "progress.closed"),
+    // this activity was delt with in a complete way
+    DONE(7, "progress.done"),
+    // this activity had to be reopened after it was delt with already
+    REOPENED(8, "progress.reopened");
 
     private final Integer id;
 
@@ -17,6 +35,26 @@ public enum Progress {
     private Progress(Integer id, String i18nKey) {
         this.id = id;
         this.i18nKey = i18nKey;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getI18nKey() {
+        return i18nKey;
+    }
+
+    public static Progress resolveProgress(Integer id) {
+        if (id == null) {
+            return null;
+        }
+        for (Progress progress : Progress.values()) {
+            if (id.equals(progress.getId())) {
+                return progress;
+            }
+        }
+        throw new IllegalArgumentException(StringUtils.join("No matching Progress found for ID ", id));
     }
 
 }
