@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_at_co_federmann_gtd_domain_GtdAction" items="${gtdactions}" z="1almfv33PKmB5tvlcgoXRz0Ebbg=">
+        <table:table data="${gtdactions}" id="l_at_co_federmann_gtd_domain_GtdAction" path="/gtdactions" z="wqwyM9V4mrb8lDA5q0kYkQBUK0Y=">
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_priority" property="priority" z="ufmvxzTXKSaeVeeH86828i9ENxk="/>
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_status" property="status" z="j9PqGzWRfEQ9C3ENpwmly8tuIOA="/>
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_name" property="name" z="W1NnyuNGIJkv6iyQTqpd3zKGidw="/>
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_description" property="description" z="n+/yrpCPSWM2A6YvuqAM908TGg4="/>
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_goal" property="goal" z="RpZRwO0Ue6gjXACs7dopMUQQKYc="/>
+            <table:column id="c_at_co_federmann_gtd_domain_GtdAction_effortEstimation" property="effortEstimation" z="6TSTb7nbB4kypqDlTDC0oGqyAM8="/>
+        </table:table>
+    </page:list>
+</div>

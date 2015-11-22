@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_at_co_federmann_gtd_domain_GtdAction" object="${gtdaction}" path="/gtdactions" z="BeeHeX4WolF4DYvF+xnyM4RJ1qU=">
+        <field:display field="priority" id="s_at_co_federmann_gtd_domain_GtdAction_priority" object="${gtdaction}" z="IgQt4DcbiIdNiDsBwoOZsH/VqqU="/>
+        <field:display field="status" id="s_at_co_federmann_gtd_domain_GtdAction_status" object="${gtdaction}" z="NJ/c/vUs+nXzynaey8qRuSMTyds="/>
+        <field:display field="name" id="s_at_co_federmann_gtd_domain_GtdAction_name" object="${gtdaction}" z="Kp5iWAjizAEa/PsWcCSHCG9UnVE="/>
+        <field:display field="description" id="s_at_co_federmann_gtd_domain_GtdAction_description" object="${gtdaction}" z="3FEEN+nAl3fefzKKcKFQKoJRdk0="/>
+        <field:display field="goal" id="s_at_co_federmann_gtd_domain_GtdAction_goal" object="${gtdaction}" z="Nq/eusvAxvH6Znoy4OjnVaUJTYc="/>
+        <field:display field="effortEstimation" id="s_at_co_federmann_gtd_domain_GtdAction_effortEstimation" object="${gtdaction}" z="OuPjpdZxICrauI5uTrvCjJChkmc="/>
+        <field:display field="entryDate" id="s_at_co_federmann_gtd_domain_GtdAction_entryDate" object="${gtdaction}" z="MxKnM6lyHO1DxAC0rTOxU42bXa8="/>
+        <field:display field="dueDate" id="s_at_co_federmann_gtd_domain_GtdAction_dueDate" object="${gtdaction}" z="QZ7KqzKGwN0ny7167xI3B1pCaqE="/>
+        <field:display field="startDate" id="s_at_co_federmann_gtd_domain_GtdAction_startDate" object="${gtdaction}" z="HdvgjHAxscYOAyPQeEonSLXy6Yw="/>
+        <field:display field="doneDate" id="s_at_co_federmann_gtd_domain_GtdAction_doneDate" object="${gtdaction}" z="37SYnwdWSawnrFYYy0RyplEFvN8="/>
+    </page:show>
+</div>
