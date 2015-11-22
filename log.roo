@@ -7,3 +7,4 @@ field string --fieldName name --notNull 1 --comment "a short textual highlevel l
 entity jpa --class ~.domain.Goal --activeRecord 1 --serializable 1 
 field string --fieldName name --comment "a short descriptive name for this goal, like learn Business English or open up a French Cusisine restaurant" --notNull 1
 field string --fieldName description --comment "a detailed description of this goal to clarify things. is intended to be marked up with markdown." --notNull 1
+

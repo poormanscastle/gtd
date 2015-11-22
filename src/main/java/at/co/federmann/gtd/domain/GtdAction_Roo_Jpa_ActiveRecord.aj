@@ -14,7 +14,7 @@ privileged aspect GtdAction_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager GtdAction.entityManager;
     
-    public static final List<String> GtdAction.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "priority", "status", "description", "goal", "effortEstimation", "entryDate", "dueDate", "startDate", "doneDate");
+    public static final List<String> GtdAction.fieldNames4OrderClauseFilter = java.util.Arrays.asList("id", "name", "priority", "status", "description", "goal", "effortEstimation", "entryDate", "dueDate", "startDate", "doneDate");
     
     public static final EntityManager GtdAction.entityManager() {
         EntityManager em = new GtdAction().entityManager;
@@ -41,8 +41,8 @@ privileged aspect GtdAction_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, GtdAction.class).getResultList();
     }
     
-    public static GtdAction GtdAction.findGtdAction(Long id) {
-        if (id == null) return null;
+    public static GtdAction GtdAction.findGtdAction(String id) {
+        if (id == null || id.length() == 0) return null;
         return entityManager().find(GtdAction.class, id);
     }
     

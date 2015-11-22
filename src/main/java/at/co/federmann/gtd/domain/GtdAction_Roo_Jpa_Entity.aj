@@ -6,31 +6,15 @@ package at.co.federmann.gtd.domain;
 import at.co.federmann.gtd.domain.GtdAction;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Version;
 
 privileged aspect GtdAction_Roo_Jpa_Entity {
     
     declare @type: GtdAction: @Entity;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long GtdAction.id;
-    
     @Version
     @Column(name = "version")
     private Integer GtdAction.version;
-    
-    public Long GtdAction.getId() {
-        return this.id;
-    }
-    
-    public void GtdAction.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer GtdAction.getVersion() {
         return this.version;

@@ -14,7 +14,7 @@ privileged aspect Goal_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Goal.entityManager;
     
-    public static final List<String> Goal.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "description");
+    public static final List<String> Goal.fieldNames4OrderClauseFilter = java.util.Arrays.asList("id", "name", "description", "parentGoal", "childGoals");
     
     public static final EntityManager Goal.entityManager() {
         EntityManager em = new Goal().entityManager;
@@ -41,8 +41,8 @@ privileged aspect Goal_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Goal.class).getResultList();
     }
     
-    public static Goal Goal.findGoal(Long id) {
-        if (id == null) return null;
+    public static Goal Goal.findGoal(String id) {
+        if (id == null || id.length() == 0) return null;
         return entityManager().find(Goal.class, id);
     }
     

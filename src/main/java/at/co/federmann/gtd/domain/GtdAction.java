@@ -16,10 +16,14 @@
  */
 package at.co.federmann.gtd.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -42,6 +46,16 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 @RooSerializable
 public class GtdAction {
+
+    /**
+     * using UUID as the primary key and entity id shall make the use case feasible to create
+     * actions offline on client apps like on ios or android and later sync data with servers.
+     */
+    @Id
+    @GeneratedValue(generator = "hibernate-uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(name = "id", unique = true)
+    private String id;
 
     /**
      * a short textual highlevel label giving a quick idea what this action is about in plain text.

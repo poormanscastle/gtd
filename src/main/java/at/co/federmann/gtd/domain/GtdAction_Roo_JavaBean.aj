@@ -9,6 +9,14 @@ import org.joda.time.LocalDate;
 
 privileged aspect GtdAction_Roo_JavaBean {
     
+    public String GtdAction.getId() {
+        return this.id;
+    }
+    
+    public void GtdAction.setId(String id) {
+        this.id = id;
+    }
+    
     public String GtdAction.getName() {
         return this.name;
     }

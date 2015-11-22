@@ -4,8 +4,17 @@
 package at.co.federmann.gtd.domain;
 
 import at.co.federmann.gtd.domain.Goal;
+import java.util.List;
 
 privileged aspect Goal_Roo_JavaBean {
+    
+    public String Goal.getId() {
+        return this.id;
+    }
+    
+    public void Goal.setId(String id) {
+        this.id = id;
+    }
     
     public String Goal.getName() {
         return this.name;
@@ -21,6 +30,22 @@ privileged aspect Goal_Roo_JavaBean {
     
     public void Goal.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Goal Goal.getParentGoal() {
+        return this.parentGoal;
+    }
+    
+    public void Goal.setParentGoal(Goal parentGoal) {
+        this.parentGoal = parentGoal;
+    }
+    
+    public List<Goal> Goal.getChildGoals() {
+        return this.childGoals;
+    }
+    
+    public void Goal.setChildGoals(List<Goal> childGoals) {
+        this.childGoals = childGoals;
     }
     
 }
