@@ -3,7 +3,9 @@
 
 package at.co.federmann.gtd.domain;
 
+import at.co.federmann.gtd.domain.Goal;
 import at.co.federmann.gtd.domain.GtdAction;
+import org.joda.time.LocalDate;
 
 privileged aspect GtdAction_Roo_JavaBean {
     
@@ -29,6 +31,54 @@ privileged aspect GtdAction_Roo_JavaBean {
     
     public void GtdAction.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Goal GtdAction.getGoal() {
+        return this.goal;
+    }
+    
+    public void GtdAction.setGoal(Goal goal) {
+        this.goal = goal;
+    }
+    
+    public Integer GtdAction.getEffortEstimation() {
+        return this.effortEstimation;
+    }
+    
+    public void GtdAction.setEffortEstimation(Integer effortEstimation) {
+        this.effortEstimation = effortEstimation;
+    }
+    
+    public LocalDate GtdAction.getEntryDate() {
+        return this.entryDate;
+    }
+    
+    public void GtdAction.setEntryDate(LocalDate entryDate) {
+        this.entryDate = entryDate;
+    }
+    
+    public LocalDate GtdAction.getDueDate() {
+        return this.dueDate;
+    }
+    
+    public void GtdAction.setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+    
+    public LocalDate GtdAction.getStartDate() {
+        return this.startDate;
+    }
+    
+    public void GtdAction.setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+    
+    public LocalDate GtdAction.getDoneDate() {
+        return this.doneDate;
+    }
+    
+    public void GtdAction.setDoneDate(LocalDate doneDate) {
+        this.doneDate = doneDate;
     }
     
 }
