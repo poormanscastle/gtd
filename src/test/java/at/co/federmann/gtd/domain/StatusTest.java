@@ -26,7 +26,7 @@ public class StatusTest {
 
     @Test
     public void testResolveStatus() throws Exception {
-        // test mapping of IDs to status
+        // test if the mapping from IDs to Status enum works
         assertTrue(Status.GREEN == Status.resolveStatus(0));
         assertTrue(Status.YELLOW == Status.resolveStatus(1));
         assertTrue(Status.RED == Status.resolveStatus(2));
