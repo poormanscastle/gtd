@@ -64,7 +64,7 @@ public class GtdAction {
     private String name;
 
     /**
-     * lets the user define priorities for the given action.
+     * lets the user assign one of the predefined priorities to the given task.
      */
     @NotNull
     @Min(0L)
